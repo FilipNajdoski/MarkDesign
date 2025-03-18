@@ -1,0 +1,47 @@
+
+.logo {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-sm {
+  height: 40px;
+  width: 40px;
+}
+
+.logo-md {
+  height: 56px;
+  width: 56px;
+}
+
+.logo-lg {
+  height: 80px;
+  width: 80px;
+}
+
+.logo-border {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid currentColor;
+  transform: rotate(3deg);
+}
+
+.logo-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
