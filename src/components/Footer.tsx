@@ -28,14 +28,14 @@ const Footer = () => {
           
           <div className="footer-contact">
             <h4>Контакт</h4>
-            <p>
+            {/* <p>
               <i className="icon-location">📍</i> ул. Партизански Одреди бр.123, Скопје
+            </p> */}
+            <p>
+              <i className="icon-phone">📞</i> +389 77 970 164
             </p>
             <p>
-              <i className="icon-phone">📞</i> +389 2 1234 567
-            </p>
-            <p>
-              <i className="icon-email">✉️</i> info@markdesign.mk
+              <i className="icon-email">✉️</i> markdesignmk@gmail.com
             </p>
           </div>
         </div>

@@ -10,7 +10,7 @@ const ContactSection = () => {
         
         <div className="contact-container">
           <div className="contact-info">
-            <div className="contact-item">
+            {/* <div className="contact-item">
               <div className="contact-icon">
                 <i className="icon-location">📍</i>
               </div>
@@ -18,7 +18,7 @@ const ContactSection = () => {
                 <h3>Адреса</h3>
                 <p>ул. Партизански Одреди бр.123<br />1000 Скопје, Македонија</p>
               </div>
-            </div>
+            </div> */}
             
             <div className="contact-item">
               <div className="contact-icon">
