@@ -9,7 +9,7 @@ const AboutSection = () => {
         <div className="about-content">
           <div className="about-image">
             <img 
-              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+              src="https://img.freepik.com/premium-photo/abstract-sketch-design-interior-kitchen-3d-rendering_256301-1778.jpg?w=740" 
               alt="Работилница за мебел" 
             />
           </div>

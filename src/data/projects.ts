@@ -74,9 +74,9 @@ const projects: Project[] = [
     title: "Спална соба со кревет и ноќни комоди",
     category: "Спални",
     description: "Луксузен сет за спална соба вклучувајќи кревет и ноќни комоди, изработени од природно дрво со фина завршна обработка. Комбинација на комфор и елеганција за создавање на совршен простор за одмор.",
-    featuredImage: "https://images.unsplash.com/photo-1617325247662-d7c99ffd7dcf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    featuredImage: "https://img.freepik.com/free-photo/3d-rendering-luxury-modern-bedroom-suite-hotel-with-tv-cabinet_105762-2278.jpg?t=st=1742411479~exp=1742415079~hmac=665cd1dd669da4236d6dc0f2c6516cc3f17c6c047ada99263fe3c18c9a1a0729&w=1380",
     images: [
-      "https://images.unsplash.com/photo-1617325247662-d7c99ffd7dcf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://img.freepik.com/free-photo/3d-rendering-luxury-modern-bedroom-suite-hotel-with-tv-cabinet_105762-2278.jpg?t=st=1742411479~exp=1742415079~hmac=665cd1dd669da4236d6dc0f2c6516cc3f17c6c047ada99263fe3c18c9a1a0729&w=1380",
       "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
     ]

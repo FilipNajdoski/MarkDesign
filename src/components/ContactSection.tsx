@@ -26,7 +26,7 @@ const ContactSection = () => {
               </div>
               <div className="contact-text">
                 <h3>Телефон</h3>
-                <p>+389 2 1234 567<br />+389 70 123 456</p>
+                <p>+389 77 970 164</p>
               </div>
             </div>
             
@@ -36,7 +36,7 @@ const ContactSection = () => {
               </div>
               <div className="contact-text">
                 <h3>Е-пошта</h3>
-                <p>info@markdesign.mk<br />contact@markdesign.mk</p>
+                <p>markdesignmk@gmail.com</p>
               </div>
             </div>
             
