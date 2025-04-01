@@ -1,6 +1,7 @@
 
 import React from 'react';
 import '../styles/contact.css';
+import { Instagram, Facebook } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -46,11 +47,23 @@ const ContactSection = () => {
               </div>
               <div className="contact-text">
                 <h3>Работно Време</h3>
-                <p>Понеделник - Петок: 09:00 - 17:00<br />Сабота: 10:00 - 14:00</p>
+                <p>Понеделник - Петок: 08:00 - 19:00<br />Сабота: 10:00 - 14:00</p>
               </div>
             </div>
+          <div className="contact-social">
+              <h3>Следете Нѐ</h3>
+              <div className="social-links">
+                <a href="https://instagram.com/markdesign" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Instagram size={24} />
+                </a>
+                <a href="https://facebook.com/markdesign" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <Facebook size={24} />
+                </a>
+              </div>
           </div>
-          
+          </div>
+
+
           <div className="contact-map">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23589.518159543!2d21.39022803955078!3d41.996456800000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415a58c9aa2a5%3A0xb2ed88c260872020!2sSkopje%2C%20North%20Macedonia!5e0!3m2!1sen!2sus!4v1628700993852!5m2!1sen!2sus" 

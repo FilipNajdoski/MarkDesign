@@ -101,9 +101,9 @@ const loadProjects = (): Project[] => {
   return [
     {
       id: 1,
-      title: "Современа кујна во минималистички стил",
+      title: "Лизгачки плакар",
       category: "Плакари",
-      description: "Елегантна кујна во минималистички стил изработена со висококвалитетни материјали и напредна технологија. Комбинацијата на дрво и модерни материјали создаваат совршен баланс помеѓу функционалност и естетика.",
+      description: "Лизгачки плакар во текстил декор со шампањ рачки и оков",
       featuredImage: "./projects/Project1/photos/1.jpeg",
       images: [
         "./projects/Project1/photos/1.jpeg",
@@ -113,14 +113,14 @@ const loadProjects = (): Project[] => {
     },
     {
       id: 2,
-      title: "Гардеробер по мерка",
-      category: "Гардеробери",
-      description: "Гардеробер по мерка направен за максимална искористеност на просторот, со паметни решенија за организација и складирање. Изработен од висококвалитетно дрво и модерни материјали кои гарантираат долготрајност и елеганција.",
+      title: "Лизгачки плакар",
+      category: "Плакари",
+      description: "",
       featuredImage: "/projects/Project2/photos/1.jpeg",
       images: [
         "./projects/Project2/photos/1.jpeg",
         "/projects/Project2/photos/2.jpeg",
-        "/projects/Project2/photos/3.jpeg"
+        //"/projects/Project2/photos/3.jpeg"
       ]
     },
     {

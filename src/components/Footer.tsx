@@ -2,6 +2,7 @@
 import React from 'react';
 import Logo from './Logo';
 import '../styles/footer.css';
+import { Instagram, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,7 @@ const Footer = () => {
           <div className="footer-logo">
             <Logo size="sm" color="#FFFDD0" />
             <h3>Марк Дизајн</h3>
-            <p>Мајсторство во изработка на мебел од дрво</p>
+            <p>Мајсторство во изработка на мебел од иверица, медијапан и елементи од дрво</p>
           </div>
           
           <div className="footer-links">
@@ -37,6 +38,16 @@ const Footer = () => {
             <p>
               <i className="icon-email">✉️</i> markdesignmk@gmail.com
             </p>
+          </div>
+        <div className="contact-social">
+              <div className="social-links">
+                <a href="https://instagram.com/markdesignmk" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Instagram size={24} />
+                </a>
+                <a href="https://facebook.com/profile.php?id=100087047577482" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <Facebook size={24} />
+                </a>
+              </div>
           </div>
         </div>
         

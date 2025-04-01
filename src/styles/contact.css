@@ -1,4 +1,3 @@
-
 .contact-section {
   padding: 5rem 0;
   background-color: var(--light-beige);
@@ -52,6 +51,40 @@
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+.contact-social {
+  margin-top: 1rem;
+}
+
+.contact-social h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--white);
+  border-radius: 50%;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 992px) {
