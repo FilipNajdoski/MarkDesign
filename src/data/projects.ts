@@ -102,13 +102,13 @@ const loadProjects = (): Project[] => {
     {
       id: 1,
       title: "Современа кујна во минималистички стил",
-      category: "Кујни",
+      category: "Плакари",
       description: "Елегантна кујна во минималистички стил изработена со висококвалитетни материјали и напредна технологија. Комбинацијата на дрво и модерни материјали создаваат совршен баланс помеѓу функционалност и естетика.",
       featuredImage: "./projects/Project1/photos/1.jpeg",
       images: [
         "./projects/Project1/photos/1.jpeg",
         "/projects/Project1/photos/2.jpeg",
-        "/projects/Project1/photos/3.jpeg"
+        //"/projects/Project1/photos/3.jpeg"
       ]
     },
     {
@@ -176,5 +176,24 @@ const loadProjects = (): Project[] => {
 
 // Load all projects
 const projects: Project[] = loadProjects();
+
+// Group projects by category
+export const getProjectsByCategory = () => {
+  const categories = {};
+  
+  projects.forEach(project => {
+    if (!categories[project.category]) {
+      categories[project.category] = [];
+    }
+    categories[project.category].push(project);
+  });
+  
+  return categories;
+};
+
+// Get unique categories
+export const getCategories = (): string[] => {
+  return [...new Set(projects.map(project => project.category))];
+};
 
 export default projects;

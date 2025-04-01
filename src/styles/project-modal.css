@@ -1,4 +1,3 @@
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -20,7 +19,7 @@
   width: 100%;
   max-width: 1000px;
   max-height: 90vh;
-  overflow: hidden;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   animation: scaleIn 0.3s ease-out;
@@ -57,14 +56,18 @@
 
 .modal-image-container {
   position: relative;
-  height: 400px;
+  max-height: 60vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
 }
 
 .gallery-nav {
@@ -170,13 +173,23 @@
 @media (max-width: 768px) {
   .modal-container {
     max-height: 95vh;
+    padding-bottom: 1rem;
   }
   
   .modal-image-container {
-    height: 250px;
+    max-height: 50vh;
+  }
+  
+  .modal-image {
+    max-height: 50vh;
   }
   
   .modal-content {
     padding: 1.5rem;
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 45px;
   }
 }

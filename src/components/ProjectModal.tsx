@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { Project } from '../data/projects';
 import '../styles/project-modal.css';
+import { useIsMobile } from '../hooks/use-mobile';
 
 interface ProjectModalProps {
   project: Project;
@@ -10,13 +10,14 @@ interface ProjectModalProps {
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const isMobile = useIsMobile();
   
-  const goToPreviousImage = (e) => {
+  const goToPreviousImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
   };
   
-  const goToNextImage = (e) => {
+  const goToNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentImageIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
   };
@@ -24,21 +25,28 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>×</button>
+        <button className="modal-close" onClick={onClose} aria-label="Close modal">×</button>
         
         <div className="modal-gallery">
           <div className="modal-image-container">
             <img 
               src={project.images[currentImageIndex]} 
-              alt={`${project.title} - Image ${currentImageIndex + 1}`} 
+              alt={project.title}
               className="modal-image"
             />
-            
-            <button className="gallery-nav prev" onClick={goToPreviousImage}>
-              &lt;
+            <button 
+              className="gallery-nav prev"
+              onClick={goToPreviousImage}
+              aria-label="Previous image"
+            >
+              ‹
             </button>
-            <button className="gallery-nav next" onClick={goToNextImage}>
-              &gt;
+            <button 
+              className="gallery-nav next"
+              onClick={goToNextImage}
+              aria-label="Next image"
+            >
+              ›
             </button>
           </div>
           
