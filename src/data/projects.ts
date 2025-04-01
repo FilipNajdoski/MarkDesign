@@ -107,7 +107,7 @@ const loadProjects = (): Project[] => {
       featuredImage: "./projects/Project1/photos/1.jpeg",
       images: [
         "./projects/Project1/photos/1.jpeg",
-        "/projects/Project1/photos/2.jpeg",
+        "./projects/Project1/photos/2.jpeg",
         //"/projects/Project1/photos/3.jpeg"
       ]
     },
@@ -119,7 +119,7 @@ const loadProjects = (): Project[] => {
       featuredImage: "/projects/Project2/photos/1.jpeg",
       images: [
         "./projects/Project2/photos/1.jpeg",
-        "/projects/Project2/photos/2.jpeg",
+        "./projects/Project2/photos/2.jpeg",
         //"/projects/Project2/photos/3.jpeg"
       ]
     },
@@ -131,8 +131,8 @@ const loadProjects = (): Project[] => {
       featuredImage: "./projects/Project3/photos/1.jpeg",
       images: [
         "./projects/Project3/photos/1.jpeg",
-        "/projects/Project3/photos/2.jpeg",
-        "/projects/Project3/photos/3.jpeg"
+        "./projects/Project3/photos/2.jpeg",
+        "./projects/Project3/photos/3.jpeg"
       ]
     },
     {
@@ -143,8 +143,8 @@ const loadProjects = (): Project[] => {
       featuredImage: "./projects/Project4/photos/1.jpeg",
       images: [
         "./projects/Project4/photos/1.jpeg",
-        "/projects/Project4/photos/2.jpeg",
-        "/projects/Project4/photos/3.jpeg"
+        "./projects/Project4/photos/2.jpeg",
+        "./projects/Project4/photos/3.jpeg"
       ]
     },
     {
@@ -155,8 +155,8 @@ const loadProjects = (): Project[] => {
       featuredImage: "./projects/Project5/photos/1.jpeg",
       images: [
         "./projects/Project5/photos/1.jpeg",
-        "/projects/Project5/photos/2.jpeg",
-        "/projects/Project5/photos/3.jpeg"
+        "./projects/Project5/photos/2.jpeg",
+        "./projects/Project5/photos/3.jpeg"
       ]
     },
     {
@@ -167,8 +167,8 @@ const loadProjects = (): Project[] => {
       featuredImage: "./projects/Project6/photos/1.jpeg",
       images: [
         "./projects/Project6/photos/1.jpeg",
-        "/projects/Project6/photos/2.jpeg",
-        "/projects/Project6/photos/3.jpeg"
+        "./projects/Project6/photos/2.jpeg",
+        "./projects/Project6/photos/3.jpeg"
       ]
     }
   ];
