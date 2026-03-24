@@ -1,49 +1,50 @@
 
 import React from 'react';
+import contactBg from '../lib/wallpapers/1584.jpg';
 import '../styles/contact.css';
-import { Instagram, Facebook } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section" style={{ backgroundImage: `url(${contactBg})` }}>
+      <div className="contact-overlay"></div>
       <div className="container">
         <h2 className="section-title">Контактирајте Нѐ</h2>
-        
+
         <div className="contact-container">
           <div className="contact-info">
             {/* <div className="contact-item">
               <div className="contact-icon">
-                <i className="icon-location">📍</i>
+                <i className="fa-solid fa-location-dot"></i>
               </div>
               <div className="contact-text">
                 <h3>Адреса</h3>
                 <p>ул. Партизански Одреди бр.123<br />1000 Скопје, Македонија</p>
               </div>
             </div> */}
-            
+
             <div className="contact-item">
               <div className="contact-icon">
-                <i className="icon-phone">📞</i>
+                <i className="fa-solid fa-phone"></i>
               </div>
               <div className="contact-text">
                 <h3>Телефон</h3>
                 <p>+389 77 970 164</p>
               </div>
             </div>
-            
+
             <div className="contact-item">
               <div className="contact-icon">
-                <i className="icon-email">✉️</i>
+                <i className="fa-solid fa-envelope"></i>
               </div>
               <div className="contact-text">
                 <h3>Е-пошта</h3>
                 <p>markdesignmk@gmail.com</p>
               </div>
             </div>
-            
+
             <div className="contact-item">
               <div className="contact-icon">
-                <i className="icon-hours">🕒</i>
+                <i className="fa-solid fa-clock"></i>
               </div>
               <div className="contact-text">
                 <h3>Работно Време</h3>
@@ -54,10 +55,10 @@ const ContactSection = () => {
               <h3>Следете Нѐ</h3>
               <div className="social-links">
                 <a href="https://instagram.com/markdesign" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <Instagram size={24} />
+                  <i className="fa-brands fa-instagram"></i>
                 </a>
                 <a href="https://facebook.com/markdesign" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <Facebook size={24} />
+                  <i className="fa-brands fa-facebook-f"></i>
                 </a>
               </div>
           </div>

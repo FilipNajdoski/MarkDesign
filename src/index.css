@@ -1,15 +1,16 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Base styles */
 html {
-  scroll-behavior: smooth; /* Add smooth scrolling behavior */
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
@@ -17,27 +18,27 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
-  
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-  
+
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(72, 60, 50, 0.2);
+  background-color: rgba(168, 164, 224, 0.3);
   border-radius: 10px;
 }
-  
+
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(72, 60, 50, 0.4);
+  background-color: rgba(168, 164, 224, 0.5);
 }
 
 /* Transitions */
 .section-transition {
-  transition: all 0.7s ease-in-out;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-hover {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-hover:hover {
@@ -51,7 +52,7 @@ body {
   display: inline-block;
   cursor: pointer;
   padding: 0.5rem 0.75rem;
-  color: #333;
+  color: var(--dark-gray);
   transition: color 0.3s;
 }
 
@@ -62,12 +63,13 @@ body {
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #773F1A;
-  transition: all 0.3s ease-in-out;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1px;
 }
 
 .nav-link:hover {
-  color: #000;
+  color: var(--primary-darker);
 }
 
 .nav-link:hover:after {
@@ -75,7 +77,7 @@ body {
 }
 
 .nav-link.active {
-  color: #000;
+  color: var(--primary-darker);
 }
 
 .nav-link.active:after {
@@ -86,8 +88,9 @@ body {
 .backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
+  background-color: rgba(26, 22, 37, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 40;
   opacity: 0;
   pointer-events: none;
@@ -105,12 +108,12 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.95);
   background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px -12px rgba(168, 164, 224, 0.25);
   z-index: 50;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   max-width: 1024px;
   width: 100%;
   max-height: 90vh;
@@ -125,19 +128,19 @@ body {
 
 /* Image loading styles */
 .image-loading {
-  background: linear-gradient(to right, #f2f2f2, #ddd);
-  animation: pulse 1.5s infinite;
+  background: linear-gradient(90deg, #f5f1ee, #e8e4e0, #f5f1ee);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
 
-@keyframes pulse {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.6; }
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* Section utilities */
 .section-padding {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 .container-custom {
@@ -168,9 +171,10 @@ body {
   position: absolute;
   bottom: -0.75rem;
   left: 0;
-  height: 3px;
+  height: 4px;
   width: 4rem;
-  background-color: #966F33;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: 2px;
 }
 
 /* Gallery grid */
@@ -196,10 +200,11 @@ body {
 .fancy-quote {
   position: relative;
   font-size: 1.25rem;
-  color: #773F1A;
-  font-family: 'Playfair Display', serif;
+  color: var(--primary-darker);
+  font-family: 'Poppins', sans-serif;
   font-style: italic;
-  line-height: 1.5;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 @media (min-width: 768px) {
@@ -217,7 +222,7 @@ body {
 .fancy-quote::before,
 .fancy-quote::after {
   font-size: 1.875rem;
-  color: rgba(119, 63, 26, 0.3);
+  color: rgba(168, 164, 224, 0.4);
   font-family: serif;
   position: absolute;
 }
@@ -237,21 +242,21 @@ body {
 }
 
 .fancy-quote::before {
-  content: '"';
+  content: '\201C';
   left: -1.25rem;
   top: 0;
 }
 
 .fancy-quote::after {
-  content: '"';
+  content: '\201D';
   margin-left: 0.25rem;
 }
 
-/* Furniture colors */
+/* Design tokens */
 :root {
-  --furniture-beige: #F5F5DC;
-  --furniture-wood: #966F33;
-  --furniture-walnut: #773F1A;
-  --furniture-cream: #FFFDD0;
-  --furniture-taupe: #483C32;
+  --furniture-beige: #f5f1ee;
+  --furniture-wood: #a8a4e0;
+  --furniture-walnut: #706bc0;
+  --furniture-cream: #faf8f6;
+  --furniture-taupe: #5a5066;
 }

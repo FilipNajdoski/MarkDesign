@@ -38,7 +38,7 @@ export const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <a href="#" className="navbar-logo">
-          <Logo size="sm" color={isScrolled ? '#773F1A' : '#FFFDD0'} />
+          <Logo size="sm" color={isScrolled ? '#706bc0' : '#ffffff'} />
           <span className="navbar-logo-text">Mark Design</span>
         </a>
 

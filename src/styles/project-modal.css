@@ -4,50 +4,58 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(26, 22, 37, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  animation: fadeIn 0.3s ease-out;
+  animation: modalFadeIn 0.3s ease-out;
 }
 
 .modal-container {
   background-color: var(--white);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-lg);
   width: 100%;
   max-width: 1000px;
   max-height: 90vh;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  animation: scaleIn 0.3s ease-out;
+  animation: modalScaleIn 0.3s ease-out;
+  box-shadow: 0 20px 60px rgba(26, 22, 37, 0.2);
 }
 
 .modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--dark-gray);
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 50%;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   cursor: pointer;
   border: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
   z-index: 10;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
 }
 
 .modal-close:hover {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: var(--white);
+  transform: rotate(90deg);
+  box-shadow: var(--shadow);
 }
 
 .modal-gallery {
@@ -61,6 +69,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--light-gray);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .modal-image {
@@ -74,11 +84,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.7);
-  color: var(--primary-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--dark-gray);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,11 +98,16 @@
   font-weight: bold;
   cursor: pointer;
   border: none;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  padding: 0;
 }
 
 .gallery-nav:hover {
-  background-color: var(--white);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: var(--shadow);
 }
 
 .gallery-nav.prev {
@@ -106,21 +123,38 @@
   overflow-x: auto;
   padding: 1rem;
   background-color: var(--light-gray);
+  gap: 0.5rem;
+}
+
+.image-thumbnails::-webkit-scrollbar {
+  height: 4px;
+}
+
+.image-thumbnails::-webkit-scrollbar-thumb {
+  background-color: rgba(168, 164, 224, 0.3);
+  border-radius: 4px;
 }
 
 .thumbnail {
   width: 80px;
   height: 60px;
-  margin-right: 0.5rem;
   border: 2px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.thumbnail:hover {
+  opacity: 0.9;
 }
 
 .thumbnail.active {
   border-color: var(--primary-color);
+  opacity: 1;
+  box-shadow: 0 0 0 2px rgba(168, 164, 224, 0.2);
 }
 
 .thumbnail img {
@@ -136,30 +170,31 @@
 
 .modal-content h2 {
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  color: var(--dark-gray);
 }
 
 .modal-category {
   display: inline-block;
-  background-color: var(--light-beige);
-  color: var(--primary-color);
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.875rem;
+  background: linear-gradient(135deg, rgba(168, 164, 224, 0.12) 0%, rgba(183, 230, 255, 0.12) 100%);
+  color: var(--primary-darker);
+  padding: 0.3rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .modal-description {
-  line-height: 1.8;
-  color: var(--dark-gray);
+  line-height: 1.85;
+  color: var(--medium-gray);
 }
 
-@keyframes fadeIn {
+@keyframes modalFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes scaleIn {
+@keyframes modalScaleIn {
   from { 
     transform: scale(0.95);
     opacity: 0;
@@ -171,23 +206,27 @@
 }
 
 @media (max-width: 768px) {
+  .modal-backdrop {
+    padding: 1rem;
+  }
+
   .modal-container {
     max-height: 95vh;
     padding-bottom: 1rem;
   }
-  
+
   .modal-image-container {
     max-height: 50vh;
   }
-  
+
   .modal-image {
     max-height: 50vh;
   }
-  
+
   .modal-content {
     padding: 1.5rem;
   }
-  
+
   .thumbnail {
     width: 60px;
     height: 45px;

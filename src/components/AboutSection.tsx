@@ -1,19 +1,14 @@
 
 import React from 'react';
+import aboutBg from '../lib/wallpapers/23870.jpg';
 import '../styles/about.css';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" style={{ backgroundImage: `url(${aboutBg})` }}>
+      <div className="about-overlay"></div>
       <div className="container">
         <div className="about-content">
-          <div className="about-image">
-            <img 
-              src="https://img.freepik.com/premium-photo/abstract-sketch-design-interior-kitchen-3d-rendering_256301-1778.jpg?w=740" 
-              alt="Работилница за мебел" 
-            />
-          </div>
-          
           <div className="about-text">
             <h2 className="section-title">За Нас</h2>
             <p>

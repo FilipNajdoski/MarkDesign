@@ -5,15 +5,17 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease;
-  padding: 1rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.25rem 0;
   background-color: transparent;
 }
 
 .navbar.scrolled {
-  background-color: var(--white);
-  box-shadow: var(--shadow);
-  padding: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(168, 164, 224, 0.10);
+  padding: 0.75rem 0;
 }
 
 .navbar-container {
@@ -34,18 +36,19 @@
 
 .navbar-logo-text {
   margin-left: 0.75rem;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--primary-color);
+  font-weight: 700;
+  color: var(--dark-gray);
+  letter-spacing: -0.02em;
 }
 
 .navbar.scrolled .navbar-logo-text {
-  color: var(--primary-color);
+  color: var(--dark-gray);
 }
 
 .navbar:not(.scrolled) .navbar-logo-text {
-  color: var(--cream);
+  color: var(--white);
 }
 
 .navbar-links {
@@ -53,62 +56,88 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 0.5rem;
 }
 
 .navbar-links li {
-  margin-left: 2rem;
+  margin-left: 0.5rem;
 }
 
 .navbar-links a {
   position: relative;
-  color: var(--primary-color);
+  color: var(--dark-gray);
   font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
 }
 
 .navbar:not(.scrolled) .navbar-links a {
-  color: var(--cream);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar-links a::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
+  bottom: 2px;
+  left: 0.75rem;
+  right: 0.75rem;
+  width: auto;
   height: 2px;
-  background-color: var(--primary-color);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar:not(.scrolled) .navbar-links a::after {
-  background-color: var(--cream);
+  background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, var(--secondary-color) 100%);
 }
 
 .navbar-links a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
+}
+
+.navbar-links a:hover {
+  color: var(--primary-darker);
+}
+
+.navbar:not(.scrolled) .navbar-links a:hover {
+  color: var(--white);
 }
 
 .navbar-menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 21px;
+  width: 28px;
+  height: 20px;
   cursor: pointer;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-menu-toggle:hover {
+  background: none;
+  box-shadow: none;
+  transform: none;
 }
 
 .navbar-menu-toggle span {
   display: block;
   width: 100%;
-  height: 3px;
-  background-color: var(--primary-color);
-  transition: all 0.3s ease;
+  height: 2.5px;
+  background-color: var(--dark-gray);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar:not(.scrolled) .navbar-menu-toggle span {
-  background-color: var(--cream);
+  background-color: var(--white);
 }
 
 @media (max-width: 768px) {
@@ -122,15 +151,20 @@
     left: 0;
     width: 100%;
     flex-direction: column;
-    background-color: var(--white);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(168, 164, 224, 0.12);
+    border-radius: 0 0 var(--radius) var(--radius);
+    gap: 0;
   }
 
   .navbar-links.open {
-    max-height: 300px;
+    max-height: 320px;
+    padding: 0.5rem 0;
   }
 
   .navbar-links li {
@@ -139,8 +173,9 @@
 
   .navbar-links a {
     display: block;
-    padding: 0.75rem 2rem;
-    color: var(--primary-color) !important;
+    padding: 0.85rem 2rem;
+    color: var(--dark-gray) !important;
+    border-radius: 0;
   }
 
   .navbar-links a::after {
@@ -148,6 +183,7 @@
   }
 
   .navbar-links a:hover {
-    background-color: var(--light-beige);
+    background-color: rgba(168, 164, 224, 0.08);
+    color: var(--primary-darker) !important;
   }
 }
