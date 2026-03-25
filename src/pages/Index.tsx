@@ -4,7 +4,6 @@ import { Navbar } from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ProjectsSection from '../components/ProjectsSection';
 import AboutSection from '../components/AboutSection';
-import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import '../styles/main.css';
 
@@ -46,7 +45,6 @@ const Index = () => {
       <main>
         <HeroSection />
         <ProjectsSection />
-        <ContactSection />
       </main>
       <div className="about-footer-wrapper">
         <AboutSection />

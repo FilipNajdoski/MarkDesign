@@ -16,6 +16,16 @@ const Footer = () => {
             <Logo size="sm" color="#a8a4e0" />
             <h3>Марк Дизајн</h3>
             <p>Мајсторство во изработка на мебел од иверица, медијапан и елементи од дрво</p>
+            <div className="contact-social">
+              <div className="social-links">
+                <a href="https://instagram.com/markdesignmk" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <i className="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/profile.php?id=100087047577482" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <i className="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="footer-links">
@@ -24,7 +34,7 @@ const Footer = () => {
               <li><a href="#hero">Почетна</a></li>
               <li><a href="#projects">Проекти</a></li>
               <li><a href="#about">За Нас</a></li>
-              <li><a href="#contact">Контакт</a></li>
+              <li><a href="#about">Контакт</a></li>
             </ul>
           </div>
 
@@ -39,16 +49,9 @@ const Footer = () => {
             <p>
               <i className="fa-solid fa-envelope"></i> markdesignmk@gmail.com
             </p>
-          </div>
-        <div className="contact-social">
-              <div className="social-links">
-                <a href="https://instagram.com/markdesignmk" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <i className="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://facebook.com/profile.php?id=100087047577482" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <i className="fa-brands fa-facebook-f"></i>
-                </a>
-              </div>
+            <p>
+              <i className="fa-solid fa-clock"></i> Пон - Пет: 08:00 - 19:00 | Саб: 10:00 - 14:00
+            </p>
           </div>
         </div>
         

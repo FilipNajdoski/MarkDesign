@@ -120,11 +120,23 @@
   margin-top: 1.5rem;
 }
 
+.footer .social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
 .footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.15rem;
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-sm);
   box-shadow: none;
+  transition: var(--transition);
 }
 
 .footer .social-links a:hover {

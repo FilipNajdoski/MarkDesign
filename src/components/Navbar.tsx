@@ -52,7 +52,6 @@ export const Navbar = () => {
            <li><a href="#hero" onClick={(e) => scrollToSection('hero', e)}>Почетна</a></li>
           <li><a href="#projects" onClick={(e) => scrollToSection('projects', e)}>Проекти</a></li>
           <li><a href="#about" onClick={(e) => scrollToSection('about', e)}>За Нас</a></li>
-          <li><a href="#contact" onClick={(e) => scrollToSection('contact', e)}>Контакт</a></li>
         </ul>
       </div>
     </nav>

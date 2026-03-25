@@ -18,3 +18,7 @@ Steps to deploy new changes:
 - npm run build
 - npm run deploy
 - after deploying go to github repo/settings/pages and update the custom domain to: markdesign.mk
+
+To start the project in VS Code, open the terminal and run:
+npm install
+npm run dev
