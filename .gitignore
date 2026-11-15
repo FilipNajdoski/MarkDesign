@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Raw Instagram data export (contains personal data)
+instagram_content/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -3,28 +3,50 @@ import useInstagramPosts from '../hooks/useInstagramPosts';
 import '../styles/projects.css';
 
 const ProjectsSection = () => {
-  const { posts, loading, error } = useInstagramPosts();
+  const { posts: allPosts, loading, error } = useInstagramPosts();
+  const [brokenImages, setBrokenImages] = useState<Set<string>>(new Set());
+  const posts = useMemo(
+    () => allPosts.filter(post => !brokenImages.has(post.imageUrl)),
+    [allPosts, brokenImages]
+  );
   const [activeHashtag, setActiveHashtag] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const autoSlideRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const hashtags = useMemo(() => {
-    const counts = new Map<string, number>();
-    posts.forEach(post => post.hashtags.forEach(tag => counts.set(tag, (counts.get(tag) ?? 0) + 1)));
-    return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
+    const postsByTag = new Map<string, Set<string>>();
+    posts.forEach(post =>
+      post.hashtags.forEach(tag => {
+        if (!postsByTag.has(tag)) postsByTag.set(tag, new Set());
+        postsByTag.get(tag)!.add(post.postId);
+      })
+    );
+    return Array.from(postsByTag.entries())
+      .map(([tag, ids]): [string, number] => [tag, ids.size])
+      .sort((a, b) => b[1] - a[1]);
   }, [posts]);
+
+  const totalPosts = useMemo(() => new Set(posts.map(post => post.postId)).size, [posts]);
 
   const visiblePosts = useMemo(
     () => (activeHashtag ? posts.filter(post => post.hashtags.includes(activeHashtag)) : posts),
     [posts, activeHashtag]
   );
 
-  const currentPost = visiblePosts[currentImageIndex];
+  const currentPost = visiblePosts[Math.min(currentImageIndex, visiblePosts.length - 1)];
 
   useEffect(() => {
     setCurrentImageIndex(0);
-  }, [activeHashtag, posts.length]);
+  }, [activeHashtag]);
+
+  useEffect(() => {
+    setCurrentImageIndex(prev => Math.min(prev, Math.max(visiblePosts.length - 1, 0)));
+  }, [visiblePosts.length]);
+
+  const markImageBroken = (url: string) => {
+    setBrokenImages(prev => new Set(prev).add(url));
+  };
 
   const changeImage = (getNext: (prev: number) => number) => {
     setIsTransitioning(true);
@@ -90,7 +112,7 @@ const ProjectsSection = () => {
                 onClick={() => setActiveHashtag(null)}
               >
                 Сите
-                <span className="hashtag-pill-count">{posts.length}</span>
+                <span className="hashtag-pill-count">{totalPosts}</span>
               </button>
               {hashtags.map(([tag, count]) => (
                 <button
@@ -122,6 +144,7 @@ const ProjectsSection = () => {
                   <>
                     <img
                       src={currentPost.imageUrl}
+                      onError={() => markImageBroken(currentPost.imageUrl)}
                       alt={currentPost.caption || 'Mark Design проект'}
                       className={`carousel-image ${isTransitioning ? 'transitioning' : ''}`}
                     />
@@ -146,7 +169,7 @@ const ProjectsSection = () => {
               </div>
 
               {/* Dots */}
-              {visiblePosts.length > 1 && (
+              {visiblePosts.length > 1 && visiblePosts.length <= 20 && (
                 <div className="carousel-dots">
                   {visiblePosts.map((post, idx) => (
                     <button

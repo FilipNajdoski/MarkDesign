@@ -6,6 +6,8 @@
   "homepage": "/MarkDesign/",
   "scripts": {
     "dev": "vite",
+    "import:instagram": "node scripts/import-instagram.mjs",
+    "prune:instagram": "node scripts/prune-instagram.mjs",
     "build": "vite build",
     "deploy": "gh-pages -d dist",
     "build:dev": "vite build --mode development",
